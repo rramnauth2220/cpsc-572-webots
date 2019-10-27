@@ -1,0 +1,46 @@
+#VRML_SIM R2019b utf8
+WorldInfo {
+  basicTimeStep 16
+}
+Viewpoint {
+  orientation -0.25177152881296105 0.9574859796470558 0.1408250547967302 1.0124073373093645
+  position 2.4139088265838935 1.206258570945843 1.2668755534318819
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+  size 1 1
+}
+WoodenBox {
+  translation -0.360124 0.05 -0.316934
+  name "wooden box(1)"
+  size 0.1 0.1 0.1
+}
+WoodenBox {
+  translation 0.35798 0.05 -0.162785
+  size 0.1 0.1 0.1
+}
+E-puck {
+  translation 0.072837 -2.22045e-16 -0.216973
+  controller "EPuckGoForward"
+}
+DEF BALL Solid {
+  translation 0 0.2 -0.2
+  children [
+    Shape {
+      appearance PBRAppearance {
+        roughness 1
+        metalness 0
+      }
+      geometry DEF BALL_GEOMETRY Sphere {
+        radius 0.05
+        subdivision 2
+      }
+    }
+  ]
+  boundingObject USE BALL_GEOMETRY
+  physics Physics {
+  }
+}
